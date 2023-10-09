@@ -7,7 +7,7 @@ html {
   
 /* Background gradient for the entire page */
 body {
-    background: linear-gradient(to bottom, #090979, #4169E1, #87CEEB);
+    background: linear-gradient(to bottom, #483D8B, #4169E1, #87CEEB);
     margin: 0;
     padding: 0;
     height: 100vh;
