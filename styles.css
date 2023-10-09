@@ -1,0 +1,332 @@
+/* Set the background color of the entire page (html) to match the body gradient */
+html {
+    height: 100%;
+    background: linear-gradient(to bottom, #483D8B, #4169E1, #87CEEB);
+    overflow: hidden;
+  }
+  
+/* Background gradient for the entire page */
+body {
+    background: linear-gradient(to bottom, #090979, #4169E1, #87CEEB);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* Add the specified font-family */
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden ;
+}
+
+/* Style for the navigation bar */
+.navbar {
+    background: transparent; /* Make the navbar transparent */
+    position: fixed; /* Keep the navbar fixed */
+    top: 0; /* Position it at the top */
+    z-index: 1; /* Set a higher z-index to make it appear above other content */
+    width: 100%; /* Make it span the full width of the viewport */
+    display: flex;
+    justify-content: space-between; /* Align links to the right */
+}
+/* Style for the dropdown menu */
+#navbarNav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+/* Style for the active dropdown menu */
+#navbarNav.active {
+    display: block;
+}
+/* Style for the links in the navbar */
+.nav-link {
+    color: rgba(255, 255, 255, 0.694);
+    text-decoration: none;
+    font-weight: bold; /* Add font weight for emphasis */
+    margin: 0 20px; /* Add spacing between links */
+    transition: color 0.3s ease;
+}
+
+/* Style for the links on hover */
+.nav-link:hover {
+    color: #fff;
+}
+
+.navbar-brand img {
+    max-height: 140px;
+    transform: scale(1.1);
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+
+/* Centered card container */
+.centered-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Make the container take the full viewport height */
+}
+/* Style for the hidden navbar */
+
+  
+/* Style for the weather card */
+.weather-card {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white card */
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    z-index: 0; /* Set a lower z-index to place it below the navbar */
+    
+}
+#aboutcard{
+    text-align: left;
+    font-size: 20px;
+    width: 600px;
+    position:absolute;
+    z-index: 2;
+}
+.aboutcard h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutcard p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+/* Style for the card content container */
+.card-content-container {
+    max-height: 60vh; /* Set a fixed maximum height for the card content */
+    overflow-y: auto; /* Add vertical scrollbar when content overflows */
+}
+
+/* Style for input and buttons in the weather card (continued) */
+/* ... */
+/* Style for the search form */
+#weatherForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.weather-card-pre {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white card */
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    margin-top: 100px; /* Adjust the margin as needed to center vertically */
+    color: #fff;
+}
+
+/* Style for the input container */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Style for the city input box */
+#cityInput {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    flex: 1;
+    margin-bottom: 10px;
+    color: #333; /* Text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Style for the "Find Weather for" text */
+#aboveCityText {
+    font-size: 20px; /* Adjust the font size */
+    color: #fff; /* Text color */
+    text-align: center; /* Center-align the text */
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 1.3px; /* Add letter spacing for an elegant look */
+    margin-bottom: 10px; /* Add some spacing below the text */
+    font-weight: 500;
+}
+/* Style for the placeholder text */
+#cityInput::placeholder {
+    color: #aaa; /* Placeholder text color */
+    font-style: italic; /* Italicize the placeholder text */
+    transition: color 0.3s ease, font-style 0.3s ease;
+}
+
+/* Style for the city input box when focused */
+#cityInput:focus {
+     /* Lighter semi-transparent background on focus */
+     color:rgb(67,94,204); /* Text color on focus */
+     color: rgb(59, 91, 216);
+}
+#cityInput{
+    font-weight: 1000;
+    color:rgb(59, 91, 216);
+    padding: 12px;
+    font-size: 18px;
+    
+}
+
+/* Style for the "Search" and "Get Device Location" buttons (continued) */
+#searchBtn,
+#getLocationBtn {
+    background-color: #4169E1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+#searchBtn:hover {
+    background-color: #3548a3; /* Change the color on hover */
+}
+/* Style for the weather details displayed after search (continued) */
+#weatherDetailsView {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Style for small information (Time, Day, Date) */
+.small-info {
+    font-size: 0.8em; /* Adjust the font size to make it smaller */
+    margin-bottom: 10px;
+    opacity: 0.8; /* Adjust opacity to make it slightly opaque */
+  }
+  .capitalize {
+    text-transform: capitalize; /* Capitalize the first letter */
+}
+/* Style for the left side of weather details */
+.left-side {
+    float: left;
+    text-align: left;
+    width: 60%;
+}
+
+/* Style for the right side (Weather Icon) */
+.right-side {
+    float: right;
+    width: 40%;
+}
+
+/* Style for separator */
+hr {
+    clear: both;
+    margin: 20px 0;
+}
+
+/* Style for weather details (Humidity, Wind Speed, AQI, Tomorrow Forecast) */
+.weather-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px auto 20px;
+    max-width: 80%;
+}
+
+.detail {
+    width: 45%;
+    text-align: left;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    
+}
+/* Use a slightly lighter text color for the values of humidity, wind speed, AQI, and tomorrow's forecast */
+.value {
+    opacity: 0.82; /* Adjust the opacity for a lighter text color */
+}
+/* Add a class for the labels */
+.label {
+    color: #fff; /* Set the label (heading) text color */
+    font-size: 19px ;
+    font-weight: 450;
+}
+/* Increase the margin between humidity and wind speed */
+#humidityValue {
+    margin-bottom: 50px;
+    
+}
+#windSpeedValue{
+    text-transform: lowercase;
+}
+/* Increase the margin between AQI and tomorrow's forecast */
+#aqiValue {
+    margin-bottom: 20px;
+}
+
+
+/* Style for the "Back" button */
+#backBtn {
+    background: #4169E1; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 20px; /* Curved edges */
+    font-size: 14px; /* Adjust the font size as needed */
+    padding: 8px 16px; /* Add padding to increase clickable area */
+    position: absolute; /* Position the button absolutely */
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transitions for hover effect */
+    z-index: 2; /* Ensure the button is in front of other elements */
+}
+
+/* Hover effect */
+#backBtn:hover {
+    background-color: #3548a3; /* Change the background color on hover */
+    transform: scale(1.05); /* Slightly scale the button on hover for a unique effect */
+}
+
+/* Style for the time */
+#timeDayDate {
+    font-size: 12px; /* Adjusted font size */
+    margin-top: 10px; /* Added margin to separate from the button */
+}
+/* Media query for smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 768px) {
+    /* Adjust the position of the "Back" button for smaller screens */
+    #backBtn {
+        top: 60px; /* Move the button further down */
+    }
+
+    /* Adjust the position of the time and date line for smaller screens */
+    #timeDayDate {
+        margin-top: 80px; /* Add margin to push it below the button */
+    }
+}
+@media (max-width: 392px) {
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Adjust the smaller font size as needed */
+    }
+}

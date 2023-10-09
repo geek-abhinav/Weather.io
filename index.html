@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+                        <!-- Navigation bar -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="logo.png" alt="Your Icon">
+                    </a>
+                    <!-- Add About and Contact links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+
+    <!-- Main content -->
+    <div class="container">
+        <!-- Weather card (initial view) -->
+    <div class="centered-card">
+        <div class="weather-card-pre" id="initialView">
+            <!-- Search form -->
+            <form id="weatherForm">
+                <div class="input-container"></div>
+                <div id="aboveCityText">Find Weather for</div>
+                <input type="text" id="cityInput" >
+                <button type="submit" id="searchBtn">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+        <!-- Weather card (weather details view) -->
+        <div class="weather-card" id="weatherDetailsView" style="display: none;">
+            <!-- Back button -->
+            <button id="backBtn">Back</button>
+
+            <!-- Time, day, and date -->
+            <div class="small-info">
+                <p id="timeDayDate">Time, Day, Date</p>
+            </div>
+
+            <!-- Left side: Temperature, Weather Condition, City -->
+            <div class="left-side">
+                <div class="large-temperature">
+                    <h1 id="temperature">Temperature</h1>
+                </div>
+                <p id="weatherDescription" class="capitalize">Weather Condition</p>
+                <p id="location">City Name</p>
+            </div>
+
+            <!-- Right side: Weather Icon -->
+            <div class="right-side">
+                <img src="" alt="Weather Icon" id="weatherIcon" class="large-icon">
+            </div>
+
+            <!-- Separator -->
+            <hr>
+
+            <!-- Weather details -->
+            <div class="weather-details">
+                <div class="detail">
+                    <p class="label">Humidity</p>
+                    <p class="value" id="humidityValue"></p> <!-- Add a class for the value element -->
+                </div>
+                <div class="detail">
+                    <p class="label">Wind Speed</p>
+                    <p class="value" id="windSpeedValue"></p> <!-- Add a class for the value element -->
+                </div>
+                <div class="detail">
+                    <p class="label">AQI</p>
+                    <p class="value" id="aqiValue"></p> <!-- Add a class for the value element -->
+                </div>
+                <div class="detail">
+                    <p class="label">Tomorrow's Forecast</p>
+                    <p class="value" id="tomorrowForecast"></p> <!-- Add a class for the value element -->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
