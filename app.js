@@ -1,7 +1,5 @@
 
-
-// API key from OpenWeatherMap (replace with your own)
-const apiKey = '14e2abd7cef9aa3fe3d8c828509149fd'; // Replace with your OpenWeatherMap API key
+const apiKey = '14e2abd7cef9aa3fe3d8c828509149fd';
 
 // Function to fetch weather data
 async function getWeatherData(cityName) {
@@ -30,13 +28,12 @@ async function getAQIData(latitude, longitude) {
         const aqiData = await aqiResponse.json();
 
         if (aqiResponse.ok) {
-            // Assuming the AQI data is available in aqiData.list[0].main.aqi
+            
             return aqiData.list[0].main.aqi;
         } else {
             throw new Error('Unable to fetch AQI data.');
         }
     } catch (error) {
-        // Handle errors related to fetching AQI data
         console.error('Error fetching AQI data:', error);
         return 'N/A';
     }
@@ -51,10 +48,9 @@ async function getTomorrowWeather(cityName) {
         const data = await response.json();
 
         if (response.ok) {
-            // Find the forecast data for tomorrow (assuming it's in the first position)
+            
             const tomorrowForecast = data.list[0];
 
-            // Extract relevant information (you might need to adjust this based on your API response structure)
             const temperature = tomorrowForecast.main.temp;
             const weatherDescription = tomorrowForecast.weather[0].description;
 
@@ -63,15 +59,11 @@ async function getTomorrowWeather(cityName) {
             throw Error(data.message || 'Unable to fetch weather data.');
         }
     } catch (error) {
-        // Handle errors related to fetching tomorrow's forecast data
         console.error('Error fetching tomorrow forecast data:', error);
         return { temperature: 'N/A', description: 'N/A' };
     }
 }
 
-// ...
-
-// ...
 
 // Function to update the weather details on the page
 async function updateWeatherDetails(weatherData) {
@@ -102,17 +94,17 @@ async function updateWeatherDetails(weatherData) {
       const formattedDate = currentDate.toLocaleDateString(undefined, options);
       const formattedTime = currentDate.toLocaleTimeString(undefined, options);
 
-    // Update elements with weather data
+   
     timeDayDateElement.textContent = `${formattedTime}`;
     temperatureElement.textContent = `${Math.round(weatherData.main.temp)}°C`;
     weatherDescriptionElement.textContent = weatherData.weather[0].description;
     locationElement.textContent = weatherData.name;
 
-    // Get the weather icon element
+   
     const weatherIconUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
     weatherIconElement.src = weatherIconUrl;
 
-    // Update other weather details
+
     humidityValueElement.textContent = `${weatherData.main.humidity}%`;
 
     windSpeedValueElement.textContent = `${weatherData.wind.speed} m/s`;
@@ -121,7 +113,7 @@ async function updateWeatherDetails(weatherData) {
     const aqiValue = await getAQIData(weatherData.coord.lat, weatherData.coord.lon);
     const tomorrowWeather = await getTomorrowWeather(weatherData.name);
 
-    // Function to convert AQI value to qualitative index
+   
     function getAQIQualitativeIndex(aqiValue) {
         if (aqiValue >= 0 && aqiValue <= 50) {
             return 'Good';
