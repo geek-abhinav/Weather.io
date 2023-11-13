@@ -95,13 +95,7 @@ body {
     z-index: 0;
     
 }
-#aboutcard{
-    text-align: left;
-    font-size: 20px;
-    width: 600px;
-    position:absolute;
-    z-index: 2;
-}
+
 .aboutcard h2 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -109,11 +103,6 @@ body {
     align-items: center;
 }
 
-.aboutcard p {
-    font-size: 14px;
-    line-height: 1.5;
-    opacity: 0.7;
-}
 
 .card-content-container {
     max-height: 60vh;
@@ -306,7 +295,10 @@ hr {
     background-color: #3548a3;
     transform: scale(1.05);
 }
-
+#contactcardd{
+    text-decoration: none;
+    color: white;
+}
 
 #timeDayDate {
     font-size: 12px;
